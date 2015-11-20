@@ -3,15 +3,12 @@ package model;
 import javax.persistence.*;
 import java.util.List;
 
-/**
- * Created by Azat Zaripov on 20.11.2015.
- */
 @Entity
 public class Cafe {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private int id;
+    private Long id;
 
     private String name;
 
@@ -24,11 +21,11 @@ public class Cafe {
     public Cafe() {
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

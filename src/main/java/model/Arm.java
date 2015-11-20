@@ -11,7 +11,7 @@ public class Arm {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private int id;
+    private Long id;
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date dateStart;
@@ -24,11 +24,11 @@ public class Arm {
     public Arm() {
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
