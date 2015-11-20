@@ -6,11 +6,13 @@ import org.springframework.stereotype.Repository;
 import repository.CafeRepositoryInterface;
 
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.transaction.Transactional;
 
 @Repository
 public class CafeRepositoryImpl implements CafeRepositoryInterface {
-    @Autowired
+    @PersistenceContext
     EntityManager entityManager;
 
     @Override
@@ -18,4 +20,15 @@ public class CafeRepositoryImpl implements CafeRepositoryInterface {
     public void editInfo(Cafe cafe) {
         entityManager.merge(cafe);
     }
+
+
+    @Override
+    @Transactional
+    public Cafe findOneById(Long id) {
+        Query query = entityManager.createNativeQuery("SELECT * FROM cafe WHERE id = ?");
+        query.setParameter(1,id);
+        return (Cafe) query.getSingleResult();
+    }
+
+
 }
