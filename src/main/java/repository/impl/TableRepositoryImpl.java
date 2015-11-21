@@ -8,6 +8,7 @@ import repository.TableRepository;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -26,10 +27,14 @@ public class TableRepositoryImpl implements TableRepository {
     }
 
     @Override
-    public List getTablesByCountOfSits(int sits) {
-        Query query = em.createNativeQuery("select * from tables where numofsits >= ?;");
-        query.setParameter(1, sits);
-        return query.getResultList();
+    public List getTablesByCountOfSits(int sits, List<Tables> tables) {
+        List<Tables> result = new ArrayList<>();
+        for (Tables tables1 : tables) {
+            if(tables1.getNumOfSits()>=sits){
+                result.add(tables1);
+            }
+        }
+        return result;
     }
 
 }

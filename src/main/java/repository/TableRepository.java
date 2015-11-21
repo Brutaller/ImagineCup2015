@@ -11,6 +11,6 @@ public interface TableRepository {
 
     void editInfoByTable(Tables tables);
 
-    List getTablesByCountOfSits(int sits);
+    List getTablesByCountOfSits(int sits, List<Tables> tables);
 
 }
