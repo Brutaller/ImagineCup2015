@@ -19,12 +19,8 @@ public class TableServiceImpl implements TableService {
     }
 
     @Override
-    public List<Table> getTablesByCountOfSits(int sits) {
+    public List getTablesByCountOfSits(int sits) {
         return null;
     }
 
-    @Override
-    public boolean isEmptyByDate(Date date) {
-        return false;
-    }
 }

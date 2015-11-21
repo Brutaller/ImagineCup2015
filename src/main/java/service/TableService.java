@@ -15,8 +15,7 @@ public interface TableService{
 
     void editInfoByTable(Table table);
 
-    List<Table> getTablesByCountOfSits(int sits);
+    List getTablesByCountOfSits(int sits);
 
-    boolean isEmptyByDate(Date date);
 
 }
