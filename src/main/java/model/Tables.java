@@ -18,6 +18,7 @@ public class Tables {
 
     private boolean isEmpty;
 
+    @Embedded
     @OneToMany(mappedBy = "table", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     List<Arm> armList;
 
