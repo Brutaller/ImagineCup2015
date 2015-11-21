@@ -1,15 +1,11 @@
-<#assign security=JspTaglibs["http://www.springframework.org/security/tags"]/>
-
-<@security.authorize access="hasAnyRole('ROLE_USER','ROLE_ADMIN')">
-    <@security.authentication property="principal.username" var="username"/>
-</@security.authorize>
-
-<header>
-    <div class="col-lg-3 col-lg-offset-9 userside">
-    <#if username??>
-        <p>${username} <a href="/logout">Выйти</a> </p>
-    <#else>
-        <p><a href="/registration">Зарегистрироваться</a> или <a href="/login">Войти</a></p>
-    </#if>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 header">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 ">
+                <div class="col-xs-0 col-sm-0 col-md-2 col-lg-2"></div>
+                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 block-menu active">Столы</div>
+                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 block-menu">Настройки</div>
+            </div>
+        </div>
     </div>
-</header>
+</div>

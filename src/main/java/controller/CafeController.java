@@ -51,7 +51,7 @@ public class CafeController {
         return "index";
     }
 
-    @RequestMapping("/cafe/{1}/add/table/")
+    @RequestMapping("/cafe/{id}/add/table/")
     public String addTable(@PathVariable Long id) {
 
         Cafe cafe = cafeService.getCafeById(id);

@@ -1,1 +1,5 @@
-<h3>azatushka</h3>
+<#include "main-template.ftl"/>
+<#macro m_body>
+
+</#macro>
+<@main title="Административная панель"/>
