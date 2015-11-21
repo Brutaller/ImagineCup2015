@@ -11,6 +11,16 @@ public class Arm {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
+    private int countOfSits;
+
+    public int getCountOfSits() {
+        return countOfSits;
+    }
+
+    public void setCountOfSits(int countOfSits) {
+        this.countOfSits = countOfSits;
+    }
+
     @Temporal(TemporalType.TIMESTAMP)
     private Date dateStart;
 
