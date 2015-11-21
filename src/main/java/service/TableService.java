@@ -1,11 +1,7 @@
 package service;
 
-import model.Arm;
-import model.Table;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
+import model.Tables;
 
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -13,7 +9,7 @@ import java.util.List;
  */
 public interface TableService{
 
-    void editInfoByTable(Table table);
+    void editInfoByTable(Tables tables);
 
     List getTablesByCountOfSits(int sits);
 

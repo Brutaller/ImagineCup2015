@@ -7,7 +7,7 @@ import java.util.List;
  * Created by Azat Zaripov on 20.11.2015.
  */
 @Entity(name = "tables")
-public class Table {
+public class Tables {
 
 
     @Id
@@ -18,10 +18,22 @@ public class Table {
 
     private boolean isEmpty;
 
-    @OneToMany(mappedBy = "id")
+    @OneToMany(mappedBy = "table", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     List<Arm> armList;
 
-    public Table() {
+    @ManyToOne
+    @JoinColumn(name = "cafe_id")
+    private Cafe cafe;
+
+    public Cafe getCafe() {
+        return cafe;
+    }
+
+    public void setCafe(Cafe cafe) {
+        this.cafe = cafe;
+    }
+
+    public Tables() {
     }
 
     public Long getId() {

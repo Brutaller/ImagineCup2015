@@ -1,6 +1,6 @@
 package repository.impl;
 
-import model.Table;
+import model.Tables;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import repository.TableRepository;
@@ -8,7 +8,6 @@ import repository.TableRepository;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -22,8 +21,8 @@ public class TableRepositoryImpl implements TableRepository {
     EntityManager em;
 
     @Override
-    public void editInfoByTable(Table table) {
-        em.merge(table);
+    public void editInfoByTable(Tables tables) {
+        em.merge(tables);
     }
 
     @Override

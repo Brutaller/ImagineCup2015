@@ -15,8 +15,8 @@ public class Cafe {
     private String address;
 
     @Embedded
-    @OneToMany(mappedBy = "id")
-    List<Table> tables;
+    @OneToMany(mappedBy = "cafe",cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    List<Tables> tables;
 
     public Cafe() {
     }
@@ -45,11 +45,11 @@ public class Cafe {
         this.address = address;
     }
 
-    public List<Table> getTables() {
+    public List<Tables> getTables() {
         return tables;
     }
 
-    public void setTables(List<Table> tables) {
+    public void setTables(List<Tables> tables) {
         this.tables = tables;
     }
 }

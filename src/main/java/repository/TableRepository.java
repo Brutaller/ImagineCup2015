@@ -1,8 +1,7 @@
 package repository;
 
-import model.Table;
+import model.Tables;
 
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -10,7 +9,7 @@ import java.util.List;
  */
 public interface TableRepository {
 
-    void editInfoByTable(Table table);
+    void editInfoByTable(Tables tables);
 
     List getTablesByCountOfSits(int sits);
 

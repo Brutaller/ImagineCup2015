@@ -13,7 +13,7 @@ public class CafeServiceImpl implements CafeServiceInterface {
 
     @Override
     public Cafe getCafeById(Long id) {
-        return (Cafe) cafeRepository.findOneById(id);
+        return cafeRepository.findOneById(id);
     }
 
     @Override

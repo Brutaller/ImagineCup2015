@@ -1,11 +1,9 @@
 package model;
 
 import javax.persistence.*;
+import javax.persistence.Table;
 import java.util.Date;
 
-/**
- * Created by Azat Zaripov on 20.11.2015.
- */
 @Entity
 public class Arm {
 
@@ -21,7 +19,20 @@ public class Arm {
 
     private String phone;
 
+    @ManyToOne
+    @JoinColumn(name = "table_id")
+    private Tables table;
+
+    public Tables getTable() {
+        return table;
+    }
+
+    public void setTable(Tables table) {
+        this.table = table;
+    }
+
     public Arm() {
+
     }
 
     public Long getId() {

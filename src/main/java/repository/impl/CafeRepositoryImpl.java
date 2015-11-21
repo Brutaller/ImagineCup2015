@@ -18,15 +18,15 @@ public class CafeRepositoryImpl implements CafeRepositoryInterface {
     @Override
     @Transactional
     public void editInfo(Cafe cafe) {
-        entityManager.merge(cafe);
+        cafe = entityManager.merge(cafe);
     }
 
 
     @Override
     @Transactional
     public Cafe findOneById(Long id) {
-        Query query = entityManager.createNativeQuery("SELECT * FROM cafe WHERE id = ?");
-        query.setParameter(1,id);
+        Query query = entityManager.createNativeQuery("SELECT * FROM cafe WHERE id = ?", Cafe.class);
+        query.setParameter(1, id);
         return (Cafe) query.getSingleResult();
     }
 
